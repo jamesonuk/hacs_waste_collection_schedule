@@ -59,17 +59,17 @@ class Source:
         session.headers.update(HEADERS)
 
         first_form_data = {
-            "SQ_FORM_462397_PAGE": "1",
-            "q462406:q1": self._postcode,
-            "form_email_462397_submit": "Next &#10140;",
+            "SQ_FORM_485465_PAGE": "1",
+            "q485476:q1": self._postcode,
+            "form_email_485465_submit": "Choose Your Address &#10140;",
         }
 
         resp = session.post(API_URL, data=first_form_data)
         resp.raise_for_status()
 
         second_form_data = {
-            "SQ_FORM_462397_PAGE": "2",
-            "q462407:q3": self._uprn,
+            "SQ_FORM_485465_PAGE": "2",
+            "q485480:q1": self._uprn,
             "form_email_462397_submit": "Get Bin Days &#10140;",
         }
 
